@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GLP-1 Quiz</title>
+    <style>
+      :root {
+        --bg: #ffffff;
+        --card: #ffffff;
+        --text: #2c3e50;
+        --accent: #f2c35c;
+        --button: #5549ff;
+        --button-shadow: rgba(25, 85, 70, 0.25);
+        --line: #d3d3d3;
+        --shadow: rgba(15, 23, 42, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Lato", "Open Sans", "Helvetica Neue", Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 48px 20px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .background-shapes {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+
+      .shape {
+        position: absolute;
+      }
+
+      .shape.circle-outline {
+        width: 22px;
+        height: 22px;
+        border: 2px solid #000000;
+        border-radius: 50%;
+        top: 40px;
+        left: 60px;
+      }
+
+      .shape.circle-solid {
+        width: 10px;
+        height: 10px;
+        background: #000000;
+        border-radius: 50%;
+        bottom: 70px;
+        right: 70px;
+      }
+
+      .shape.cross {
+        width: 16px;
+        height: 16px;
+        top: 90px;
+        left: 120px;
+      }
+
+      .shape.cross::before,
+      .shape.cross::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 16px;
+        height: 2px;
+        background: #000000;
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+
+      .shape.cross::after {
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+
+      .shape.cross.second {
+        top: 140px;
+        left: 200px;
+      }
+
+      .shape.triangle {
+        width: 0;
+        height: 0;
+        border-left: 16px solid transparent;
+        border-right: 16px solid transparent;
+        border-bottom: 28px solid #f7b7a0;
+        top: 60px;
+        right: 80px;
+      }
+
+      .shape.triangle.small {
+        border-left-width: 10px;
+        border-right-width: 10px;
+        border-bottom-width: 18px;
+        bottom: 60px;
+        right: 110px;
+      }
+
+      .shape.poly-purple {
+        width: 44px;
+        height: 30px;
+        background: #6a5acd;
+        border-radius: 6px;
+        transform: skew(-10deg, -8deg);
+        top: 110px;
+        left: 260px;
+      }
+
+      .shape.poly-dark {
+        width: 54px;
+        height: 38px;
+        background: #483d8b;
+        border-radius: 10px 6px 12px 8px;
+        transform: skew(8deg, -6deg);
+        bottom: 90px;
+        left: 70px;
+      }
+
+      .shape.zigzag {
+        width: 46px;
+        height: 46px;
+        border: 2px solid #1f2933;
+        border-radius: 6px;
+        transform: rotate(10deg) skew(-10deg, 0deg);
+        bottom: 110px;
+        right: 180px;
+        clip-path: polygon(0% 10%, 45% 10%, 60% 0%, 75% 10%, 100% 10%, 100% 90%, 55% 90%, 40% 100%, 25% 90%, 0% 90%);
+      }
+
+      .card {
+        width: min(640px, 92vw);
+        background: var(--card);
+        border-radius: 24px;
+        box-shadow: 0 18px 45px var(--shadow);
+        padding: 50px 48px 44px;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      .headline {
+        font-size: clamp(1.7rem, 1.2rem + 2vw, 2.2rem);
+        font-weight: 700;
+        line-height: 1.35;
+        margin: 0 0 28px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      .headline span {
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .starburst {
+        width: 14px;
+        height: 14px;
+        display: inline-block;
+        background: var(--accent);
+        clip-path: polygon(50% 0%, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0% 50%, 40% 40%);
+        margin: 0 8px;
+      }
+
+      .cta {
+        display: inline-block;
+        background: var(--button);
+        color: #ffffff;
+        border: none;
+        border-radius: 999px;
+        padding: 16px 40px;
+        font-size: 1rem;
+        font-weight: 600;
+        box-shadow: 0 12px 20px var(--button-shadow);
+        text-decoration: none;
+      }
+
+      .disclaimer {
+        margin: 28px auto 0;
+        font-size: 0.5rem;
+        line-height: 1.5;
+        color: #4b5563;
+      }
+
+      .disclaimer p {
+        margin: 0 0 16px;
+      }
+
+      @media (max-width: 600px) {
+        .card {
+          padding: 40px 28px 36px;
+        }
+
+        .headline {
+          gap: 6px;
+        }
+
+        .disclaimer {
+          font-size: 0.4rem;
+        }
+
+        .shape.poly-purple {
+          left: 200px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background-shapes" aria-hidden="true">
+      <span class="shape circle-outline"></span>
+      <span class="shape cross"></span>
+      <span class="shape poly-purple"></span>
+      <span class="shape cross second"></span>
+      <span class="shape triangle"></span>
+      <span class="shape poly-dark"></span>
+      <span class="shape zigzag"></span>
+      <span class="shape circle-solid"></span>
+      <span class="shape triangle small"></span>
+    </div>
+
+    <main class="card">
+      <h1 class="headline">
+        <span><span class="starburst"></span>Get pre-approved
+        for weight loss medication with our 3 minute online
+        assessment<span class="starburst"></span>
+      </h1>
+      <a
+        class="cta"
+        href="https://afflat3e1.com/trk/lnk/B1AD5CBC-6067-422F-B701-BBCB91E47D47/?o=30881&c=918277&a=714640&k=7D7BF71E4AE0F16B86871A3DC30D038E&l=36115"
+      >
+        Take Assessment
+      </a>
+      <div class="disclaimer">
+        <p>
+          Side effects of Wegovy (R) may include possible thyroid tumors. See
+          here for details.
+        </p>
+        <p>
+          *In a multi-national, double-blind clinical trial of over 17,000
+          patients with BMI of 27 or greater, weekly injections of semaglutide
+          for a mean duration of 33 months reduced the risk of a composite of
+          death from cardiovascular causes, nonfatal myocardial infarction, or
+          nonfatal stroke by 20%. Lincoff AM, Brown-Frandsen K, Colhoun HM, et
+          al. Semaglutide and Cardiovascular Outcomes in Obesity without
+          Diabetes. N Engl J Med. 2023;389(24):2221-2232.
+          doi:10.1056/NEJMoa2307563.
+        </p>
+      </div>
+    </main>
+  </body>
+</html>
