@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GLP-1 Medication Overview</title>
+    <style>
+      :root {
+        --bg: #f7f7fb;
+        --card: #ffffff;
+        --text: #1f2933;
+        --muted: #52606d;
+        --accent: #5549ff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Lato", "Open Sans", "Helvetica Neue", Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      .wrapper {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 64px 20px 80px;
+      }
+
+      .hero {
+        background: var(--card);
+        border-radius: 28px;
+        padding: 40px 44px;
+        box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
+        margin-bottom: 32px;
+      }
+
+      .eyebrow {
+        color: var(--accent);
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+      }
+
+      h1 {
+        margin: 12px 0 16px;
+        font-size: clamp(2rem, 1.4rem + 2vw, 2.8rem);
+        line-height: 1.2;
+      }
+
+      .subhead {
+        color: var(--muted);
+        font-size: 1.05rem;
+        margin: 0;
+      }
+
+      .content {
+        background: var(--card);
+        border-radius: 24px;
+        padding: 36px 40px;
+        box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+      }
+
+      h2 {
+        margin-top: 28px;
+        margin-bottom: 12px;
+        font-size: 1.35rem;
+      }
+
+      p {
+        margin: 0 0 18px;
+      }
+
+      ul {
+        margin: 0 0 18px 18px;
+        padding: 0;
+        color: var(--muted);
+      }
+
+      .note {
+        background: rgba(85, 73, 255, 0.08);
+        border-left: 4px solid var(--accent);
+        padding: 16px 18px;
+        border-radius: 16px;
+        color: var(--muted);
+      }
+
+      .cta-row {
+        margin-top: 28px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      .cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 28px;
+        border-radius: 999px;
+        background: var(--accent);
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 600;
+        box-shadow: 0 12px 24px rgba(85, 73, 255, 0.25);
+      }
+
+      .cta.secondary {
+        background: transparent;
+        color: var(--accent);
+        border: 2px solid rgba(85, 73, 255, 0.4);
+        box-shadow: none;
+      }
+
+      @media (max-width: 640px) {
+        .hero,
+        .content {
+          padding: 28px 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <section class="hero">
+        <div class="eyebrow">Informational Guide</div>
+        <h1>Understanding GLP-1 weight loss medications</h1>
+        <p class="subhead">
+          A quick overview of how GLP-1 therapies work, what to expect, and
+          which questions to ask your healthcare provider.
+        </p>
+      </section>
+
+      <article class="content">
+        <h2>What are GLP-1 medications?</h2>
+        <p>
+          GLP-1 medications are prescription therapies that mimic a natural
+          hormone involved in appetite regulation and glucose control. They can
+          help people feel full sooner, reduce cravings, and support sustained
+          weight management when paired with nutrition and lifestyle changes.
+        </p>
+
+        <h2>Who may be a candidate?</h2>
+        <p>
+          Eligibility is based on factors like body mass index, existing health
+          conditions, and medical history. A licensed clinician can determine
+          whether GLP-1 therapy is appropriate for your situation.
+        </p>
+        <ul>
+          <li>Individuals with a BMI over 27 with weight-related conditions</li>
+          <li>People seeking clinically supervised weight loss support</li>
+          <li>Patients who have tried lifestyle-only approaches without success</li>
+        </ul>
+
+        <h2>What does the process look like?</h2>
+        <p>
+          Most programs begin with a health intake and brief questionnaire. If
+          you qualify, a provider reviews your information and determines a
+          personalized plan, including ongoing monitoring and adjustments.
+        </p>
+
+        <div class="note">
+          Side effects can include nausea, digestive changes, or other symptoms.
+          Always discuss benefits and risks with a healthcare professional
+          before starting any medication.
+        </div>
+
+        <div class="cta-row">
+          <a class="cta" href="glp-offer.html">Return to assessment</a>
+        </div>
+      </article>
+    </div>
+  </body>
+</html>
